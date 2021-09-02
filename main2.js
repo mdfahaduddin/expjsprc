@@ -20,12 +20,25 @@ app.get('/hdr', function(req, res){
       res.end(firstName + ' ' + lastName);
   })
 
-  //simple post req
+  //query  req
   app.post('/', function(req, res){
     
-    res.end('Post request')
+   let firstName = req.query.fname;
+   let lastName = req.query.lname;
+
+   res.send(firstName + ' ' + lastName);
     
   })
+
+    //header  req
+    app.post('/2', function(req, res){
+    
+        let firstName =  req.header('firstName');
+        let lastName =  req.header('lastName');
+     
+        res.send(firstName + ' ' + lastName);
+         
+       })
 
 
 
