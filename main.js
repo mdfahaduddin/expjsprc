@@ -2,9 +2,27 @@ var express = require('express');
 
 app = express();
 
+//application level middleware
+/*
 app.use(function(req, res, next) {
 
     console.log('I am Application level middleware');
+    next();
+})
+*/
+
+app.use('/about', function(req, res, next) {
+    console.log('I am About  middleware');
+    next();
+})
+
+app.use('/', function(req, res, next) {
+    console.log('I am Home  middleware');
+    next();
+})
+
+app.use('/contact', function(req, res, next) {
+    console.log('I am Contact  middleware');
     next();
 })
 
