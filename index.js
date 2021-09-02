@@ -37,6 +37,28 @@ app.get('/six', function(req, res){
     res.status(201).end('Hey World');
 })
 
+//cookies save
+
+app.get('/seven', function(req, res){
+    
+    res.cookie('name','Md Fahad Uddin');
+    res.cookie('city','Noakhali');
+    res.cookie('age','21');
+   
+   res.end('Save Success')
+})
+
+//cookies clear
+
+app.get('/eight', function(req, res){
+    
+    res.clearCookie('name');
+    res.clearCookie('age');
+    res.clearCookie('city');
+   
+   res.end('Clear Success')
+})
+
 //JSON response
 app.get('/four', function(req, res){
 
